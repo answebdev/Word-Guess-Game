@@ -3,8 +3,8 @@ var numberBlanks = 0;
 var wins = 0;
 var losses = 0;
 var userGuess = [];
-var numGuessesLeft = 9;
 var randomWord;
+// var res = str.toUpperCase();
 
 // Create variables that hold references to the places in the HTML where we want to display things.
 var directionsText = document.getElementById("directions-text");
@@ -16,23 +16,27 @@ var lossCounter = document.getElementById("loss-counter");
 
 function startGame() {
 }
-//Pick a random word from the wordList array
-var wordList = ["laptop", "bootcamp", "student", "teacher", "developer", "terminal", "mouse"];
+// Pick a random word from the wordList array
+var wordList = ["ID", "bootcamp", "student", "teacher", "developer", "terminal", "mouse"];
 randomWord = wordList[Math.floor(Math.random() * wordList.length)];
 console.log(randomWord);
+// capRandomWord = randomWord.toUpperCase();
+// console.log(capRandomWord);
 var rightLetter = [];
 var wrongLetter = [];
 var spaces = [];
+var guessesLeft = 9 - wrongLetter;
 
-//Splits the randomly selected word into individual letters
+// Split the randomly selected word into individual letters
 lettersInRandomWord = randomWord.split("");
-//Determines the number of blank spaces in the randomly selected word
+// Determine the number of blank spaces in the randomly selected word
 numberBlanks = lettersInRandomWord.length;
 console.log(numberBlanks);
-//Creates spaces based on number of letters in word
+// Create spaces based on number of letters in word
 function createSpaces() {
   for (i = 0; i < randomWord.length; i++) {
     spaces.push("_");
+    // Show the correct number of spaces on the screen for the random word
     document.getElementById("word-blanks").innerHTML = spaces;
   }
   return spaces;
@@ -41,39 +45,50 @@ console.log(createSpaces());
 
 document.onkeyup = function (event) {
   console.log(event);
-  // Determines which key was pressed.
+  // Determine which key was pressed.
   var userGuess = event.key;
 
   // Hide the directions
   directionsText.textContent = "";
 
-  //GET A GUESS FROM THE USER
-  // document.addEventListener("keypress", (event)) {
-  //   userGuess = String.fromCharCode(event.keyCode);
-  //   if (randomWord.indexOf(userGuess) > -1 {
-  //     console.log(true);
-  //   }
-  //   console.log(event);
-  // });
-  document.onkeyup = function(event) {
+  // Get the user's guess
+  document.onkeyup = function (event) {
     userGuess = event.key;
-    //Checking the guess
-    if(randomWord.indexOf(userGuess) > -1) {
-      console.log(randomWord.indexOf(userGuess));
-      console.log("Correct");
+    // Check the guess
+    if (randomWord.indexOf(userGuess) > -1) {
+      for (var i = 0; i < randomWord.length; i++) {
+        if (randomWord[i] === userGuess) {
+          spaces[i] = userGuess;
+          console.log(spaces);
+          // rightLetter.push(userGuess);
+          console.log(rightLetter);
+
+          // Populate the game (spaces) with the correctly guessed letter
+          // document.getElementById("word-blanks").innerHTML = rightLetter;
+        }
+      }
+      // console.log(randomWord.indexOf(userGuess));
+      // console.log("Correct");
     } else {
+      // Push wrong guess into wrongLetter array
       wrongLetter.push(userGuess);
+      // Show which letters were guessed incorrectly on the screen
+      document.getElementById("wrong-guesses").innerHTML = wrongLetter;
+      // Decrease the number of guesses left
+      guessesLeft--;
+      // Update number of guesses left on the screen
+      document.getElementById("guesses-left").innerHTML = guessesLeft;
+      console.log(guessesLeft);
       console.log(wrongLetter);
+      // When user has guessed all the letters (guessed the word) display a win message
+      // Update the number of wins - plus one
+      // Restart the game
+
+      // When user has exhaused all 9 guesses display a lose message
+      // Update the number of losses - plus one
+      // Restart the game
     }
   }
-
-  // document.getElementById('wordToGuess').innerHTML = blanksAndSuccesses.join(' ');
-  document.getElementById("guesses-left").innerHTML = numGuessesLeft;
-  document.getElementById("wrong-guesses").innerHTML = wrongLetter;
-  document.getElementById("win-counter").innerHTML = wins;
-  document.getElementById("loss-counter").innerHTML = losses;
-
-
 
 
 

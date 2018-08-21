@@ -37,7 +37,7 @@ function createSpaces() {
   for (i = 0; i < randomWord.length; i++) {
     spaces.push("_");
     // Show the correct number of spaces on the screen for the random word
-    document.getElementById("word-blanks").innerHTML = spaces;
+    document.getElementById("word-blanks").innerHTML = spaces.join(' ');
   }
   return spaces;
 }
@@ -73,7 +73,7 @@ document.onkeyup = function (event) {
       // Push wrong guess into wrongLetter array
       wrongLetter.push(userGuess);
       // Show which letters were guessed incorrectly on the screen
-      document.getElementById("wrong-guesses").innerHTML = wrongLetter;
+      document.getElementById("wrong-guesses").innerHTML = wrongLetter.join(", ");
       // Decrease the number of guesses left
       guessesLeft--;
       // Update number of guesses left on the screen

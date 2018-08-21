@@ -54,6 +54,8 @@ document.onkeyup = function (event) {
   // Get the user's guess
   document.onkeyup = function (event) {
     userGuess = event.key;
+    // userGuess = event.key.toUpperCase();
+    
     // Check the guess
     if (randomWord.indexOf(userGuess) > -1) {
       for (var i = 0; i < randomWord.length; i++) {
@@ -89,15 +91,6 @@ document.onkeyup = function (event) {
       // Restart the game
     }
   }
-
-
-
-  // Display the user and computer guesses, and wins/losses/ties.
-  // userChoiceText.textContent = "You chose: " + userGuess;
-  // computerChoiceText.textContent = "The computer chose: " + computerGuess;
-  // winsText.textContent = "wins: " + wins;
-  // lossesText.textContent = "losses: " + losses;
-  // tiesText.textContent = "ties: " + ties;
 }
 
 

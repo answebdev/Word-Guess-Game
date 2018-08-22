@@ -66,7 +66,7 @@ document.onkeyup = function (event) {
           console.log(rightLetter);
 
           // Populate the game (spaces) with the correctly guessed letter
-          document.getElementById("word-blanks").innerHTML = spaces;
+          document.getElementById("word-blanks").innerHTML = spaces.join("");
         }
       }
       // console.log(randomWord.indexOf(userGuess));

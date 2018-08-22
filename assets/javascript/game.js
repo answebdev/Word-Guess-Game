@@ -55,7 +55,7 @@ document.onkeyup = function (event) {
   document.onkeyup = function (event) {
     userGuess = event.key;
     // userGuess = event.key.toUpperCase();
-    
+
     // Check the guess
     if (randomWord.indexOf(userGuess) > -1) {
       for (var i = 0; i < randomWord.length; i++) {
@@ -66,7 +66,7 @@ document.onkeyup = function (event) {
           console.log(rightLetter);
 
           // Populate the game (spaces) with the correctly guessed letter
-          // document.getElementById("word-blanks").innerHTML = rightLetter;
+          document.getElementById("word-blanks").innerHTML = spaces;
         }
       }
       // console.log(randomWord.indexOf(userGuess));
@@ -93,9 +93,15 @@ document.onkeyup = function (event) {
   }
 }
 
+//THESE ARE THE MAIN THINGS YOU NEED TO RESTART THE GAME
+  //reset the guessesLeft
+  //reset the word
 
 
 
+
+
+  
 //1. Press any key to start -- DONE
 //2. Pick a random word -- DONE
 

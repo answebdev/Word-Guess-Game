@@ -18,7 +18,26 @@ var lossCounter = document.getElementById("loss-counter");
 // }
 
 // Pick a random word from the wordList array
-var wordList = ["ID", "bootcamp", "student", "teacher", "developer", "terminal", "mouse"];
+var wordList = [
+  "yoga",
+  "basketball",
+  "referee",
+  "court",
+  "treadmill",
+  "boxing",
+  "wrestling",
+  "weightlifting",
+  "diver",
+  "tennis",
+  "baseball",
+  "volleyball",
+  "golf",
+  "soccer",
+  "uniform",
+  "football",
+  "helmet",
+  "field"
+];
 randomWord = wordList[Math.floor(Math.random() * wordList.length)];
 console.log(randomWord);
 // capRandomWord = randomWord.toUpperCase();
@@ -89,25 +108,25 @@ document.onkeyup = function (event) {
       // When user has guessed all the letters (guessed the word) display a win message - use if statement -- if all of the array is filled, you win
 
       // Do this if the user's guess exists in the random word
-      if (randomWord.indexOf(userGuess) > -1) {
-        // Loop through the random word based on how many blanks are in the word
-        for (var i = 0; i < lettersInRandomWord; i++) {
-          // Fills in the correct index with the user's correct guess
-          if (numLetters[i] === userGuess) {
-            alert("yes");
-            wins++;
-            document.getElementById("win-counter").innerHTML = wins;
-            console.log(wins);
-          } else if (guessesLeft === 0)
-            alert("You lose");
-          losses++;
-          document.getElementById("loss-counter").innerHTML = losses;
-          console.log(losses);
-        }
-      }
+      // if (randomWord.indexOf(userGuess) > -1) {
+      // Loop through the random word based on how many blanks are in the word
+      // for (var i = 0; i < lettersInRandomWord; i++) {
+      // Fills in the correct index with the user's correct guess
+      if (userGuess === numLetters) {
+        alert("yes");
+        wins++;
+        document.getElementById("win-counter").innerHTML = wins;
+        console.log(wins);
+      } else if (guessesLeft === 0)
+        alert("You lose");
+      losses++;
+      document.getElementById("loss-counter").innerHTML = losses;
+      console.log(losses);
     }
   }
 }
+  // }
+// }
 
     // for (var i = 0; i < numOfSpaces; i++) {
     //   if(randomWord.indexOf(userGuess) > -1) {

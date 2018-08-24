@@ -4,7 +4,6 @@ var wins = 0;
 var losses = 0;
 var userGuess = [];
 var randomWord;
-// var res = str.toUpperCase();
 
 // Create variables that hold references to the places in the HTML where we want to display things.
 var directionsText = document.getElementById("directions-text");
@@ -39,6 +38,7 @@ var wordList = [
   "field"
 ];
 
+// CREATE A RANDOM WORD
 randomWord = wordList[Math.floor(Math.random() * wordList.length)];
 console.log(randomWord);
 // capRandomWord = randomWord.toUpperCase();
@@ -105,13 +105,14 @@ document.onkeyup = function (event) {
           matched = false;
         }
       }
-      if(matched===true) {
-        // alert("yes");
+      if (matched === true) {
+        console.log("You win!");
         wins++;
         document.getElementById("win-counter").innerHTML = wins;
         console.log(wins);
+        reset();
       }
-    
+
       // console.log(randomWord.indexOf(userGuess));
       // console.log("Correct");
     } else {
@@ -127,12 +128,39 @@ document.onkeyup = function (event) {
       console.log(wrongLetter);
 
       if (guessesLeft === 0) {
-        alert("You lose");
+        console.log("You lose");
         losses++;
         document.getElementById("loss-counter").innerHTML = losses;
         console.log(losses);
+        reset();
       }
     }
+  }
+}
+
+// RESET THE GAME
+function reset() {
+  guessesLeft = 10;
+  console.log(guessesLeft);
+
+  randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+  console.log(randomWord);
+
+  var numLetters = 0;
+
+  // Split the randomly selected word into individual letters
+  lettersInRandomWord = randomWord.split("");
+  // Determine the number of blank spaces in the randomly selected word
+  numberBlanks = lettersInRandomWord.length;
+  console.log(numberBlanks);
+  // Create spaces based on number of letters in word
+  function createSpaces() {
+    for (i = 0; i < randomWord.length; i++) {
+      spaces.push(" _ ");
+      // Show the correct number of spaces on the screen for the random word
+      document.getElementById("word-blanks").innerHTML = spaces.join(' ');
+    }
+    return spaces;
   }
 }
 
@@ -144,6 +172,11 @@ document.onkeyup = function (event) {
 //THESE ARE THE MAIN THINGS YOU NEED TO RESTART THE GAME
   //reset the guessesLeft
   //reset the word
+
+
+
+
+
 
 //1. Press any key to start -- DONE
 //2. Pick a random word -- DONE

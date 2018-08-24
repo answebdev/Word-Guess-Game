@@ -38,6 +38,7 @@ var wordList = [
   "helmet",
   "field"
 ];
+
 randomWord = wordList[Math.floor(Math.random() * wordList.length)];
 console.log(randomWord);
 // capRandomWord = randomWord.toUpperCase();
@@ -92,6 +93,25 @@ document.onkeyup = function (event) {
           document.getElementById("word-blanks").innerHTML = spaces.join("");
         }
       }
+      console.log(randomWord.split(""));
+      console.log(spaces);
+
+      // CODE THAT DETERMINES WIN OR LOSS
+      //correct user guess (spaces array) === random word (randomWord is a string, so in order for it to be an array so that it's equal to correct user guess, also an array, we use split - join turns an array into a string)
+      var matched = true;
+      for (i = 0; i < spaces.length; i++) {
+
+        if (spaces[i] !== (randomWord.split(""))[i]) {
+          matched = false;
+        }
+      }
+      if(matched===true) {
+        // alert("yes");
+        wins++;
+        document.getElementById("win-counter").innerHTML = wins;
+        console.log(wins);
+      }
+    
       // console.log(randomWord.indexOf(userGuess));
       // console.log("Correct");
     } else {
@@ -105,43 +125,16 @@ document.onkeyup = function (event) {
       document.getElementById("guesses-left").innerHTML = guessesLeft;
       console.log(guessesLeft);
       console.log(wrongLetter);
-      // When user has guessed all the letters (guessed the word) display a win message - use if statement -- if all of the array is filled, you win
 
-      // Do this if the user's guess exists in the random word
-      // if (randomWord.indexOf(userGuess) > -1) {
-      // Loop through the random word based on how many blanks are in the word
-      // for (var i = 0; i < lettersInRandomWord; i++) {
-      // Fills in the correct index with the user's correct guess
-      if (userGuess === numLetters) {
-        alert("yes");
-        wins++;
-        document.getElementById("win-counter").innerHTML = wins;
-        console.log(wins);
-      } else if (guessesLeft === 0)
+      if (guessesLeft === 0) {
         alert("You lose");
-      losses++;
-      document.getElementById("loss-counter").innerHTML = losses;
-      console.log(losses);
+        losses++;
+        document.getElementById("loss-counter").innerHTML = losses;
+        console.log(losses);
+      }
     }
   }
 }
-  // }
-// }
-
-    // for (var i = 0; i < numOfSpaces; i++) {
-    //   if(randomWord.indexOf(userGuess) > -1) {
-    //     alert("yes");
-    //   }
-    // }
-
-    // if (userGuess === randomWord.length) {
-    //   alert("You win!");
-    // } else if (guessesLeft === 0)
-    //   alert("You lose");
-
-
-    // Update the number of wins - plus one
-    // Restart the game
 
     // When user has exhaused all 9 guesses display a lose message - use if statement
     // Update the number of losses - plus one
@@ -151,11 +144,6 @@ document.onkeyup = function (event) {
 //THESE ARE THE MAIN THINGS YOU NEED TO RESTART THE GAME
   //reset the guessesLeft
   //reset the word
-
-
-
-
-
 
 //1. Press any key to start -- DONE
 //2. Pick a random word -- DONE
@@ -177,12 +165,3 @@ document.onkeyup = function (event) {
     //     }
     //  ask to play again
     // }
-
-
-    //Create an array of words -- DONE
-    //Pick a random word -- DONE
-    //Create spaces based on length of word -- DONE
-    //Get a guess from the user
-    //Check the guess
-    //If correct, push to right array
-    //If wrong, push to wrong array

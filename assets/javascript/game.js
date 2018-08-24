@@ -142,27 +142,21 @@ document.onkeyup = function (event) {
 function reset() {
   guessesLeft = 10;
   console.log(guessesLeft);
+  rightLetter = [];
+  wrongLetter = [];
 
   randomWord = wordList[Math.floor(Math.random() * wordList.length)];
   console.log(randomWord);
+  // var numLetters = 0;
 
-  var numLetters = 0;
 
-  // Split the randomly selected word into individual letters
   lettersInRandomWord = randomWord.split("");
-  // Determine the number of blank spaces in the randomly selected word
   numberBlanks = lettersInRandomWord.length;
-  console.log(numberBlanks);
-  // Create spaces based on number of letters in word
-  function createSpaces() {
-    for (i = 0; i < randomWord.length; i++) {
-      spaces.push(" _ ");
-      // Show the correct number of spaces on the screen for the random word
-      document.getElementById("word-blanks").innerHTML = spaces.join(' ');
-    }
-    return spaces;
-  }
+  spaces = [];
+  createSpaces();
+  return spaces;
 }
+
 
     // When user has exhaused all 9 guesses display a lose message - use if statement
     // Update the number of losses - plus one

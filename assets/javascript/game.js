@@ -140,7 +140,8 @@ document.onkeyup = function (event) {
 
 // RESET THE GAME
 function reset() {
-  guessesLeft = 10;
+  guessesLeft = 9;
+  document.getElementById("guesses-left").innerHTML = guessesLeft;
   console.log(guessesLeft);
   rightLetter = [];
   wrongLetter = [];

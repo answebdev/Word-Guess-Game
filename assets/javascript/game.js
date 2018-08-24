@@ -1,3 +1,4 @@
+// Global variables
 var lettersInRandomWord = [];
 var numberBlanks = 0;
 var wins = 0;
@@ -68,10 +69,6 @@ document.onkeyup = function (event) {
   // Hide the directions
   directionsText.textContent = "";
 
-  // Get the user's guess
-  document.onkeyup = function (event) {
-    userGuess = event.key;
-
     // CHECK THE GUESS
     if (randomWord.indexOf(userGuess) > -1) {
       for (var i = 0; i < randomWord.length; i++) {
@@ -124,7 +121,6 @@ document.onkeyup = function (event) {
       }
     }
   }
-}
 
 // RESET THE GAME
 function reset() {

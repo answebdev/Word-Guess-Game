@@ -127,7 +127,7 @@ document.onkeyup = function (event) {
     console.log(wrongLetter);
 
     if (guessesLeft === 0) {
-      console.log("Sorry, you lose");
+      console.log("Sorry, you lose.");
       losses++;
       document.getElementById("loss-counter").innerHTML = losses;
       document.getElementById("message").innerHTML = "Sorry, you lose.";

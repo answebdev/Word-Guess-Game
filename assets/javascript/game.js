@@ -102,6 +102,10 @@ document.onkeyup = function (event) {
       document.getElementById("win-counter").innerHTML = wins;
       // alert("You win!");
       document.getElementById("message").innerHTML = "You win!";
+      var winSound = document.getElementById("fanfare");
+      if(wins++) {
+        winSound.play();
+      }
       // // Add win image
       // var img = document.createElement("img");
       // img.src = "assets/images/you-win.png";
@@ -128,6 +132,10 @@ document.onkeyup = function (event) {
       document.getElementById("loss-counter").innerHTML = losses;
       // alert("Sorry, you lose.");
       document.getElementById("message").innerHTML = "Sorry, you lose.";
+      var loseSound = document.getElementById("trombone");
+      if(wins++) {
+        loseSound.play();
+      }
       // Add lose image
       // var img = document.createElement("img");
       // img.src = "assets/images/you-lose.png";

@@ -91,7 +91,6 @@ document.onkeyup = function (event) {
     //correct user guess (spaces array) === random word (randomWord is a string, so in order for it to be an array so that it's equal to correct user guess, also an array, we use split - join turns an array into a string)
     var matched = true;
     for (i = 0; i < spaces.length; i++) {
-
       if (spaces[i] !== (randomWord.split(""))[i]) {
         matched = false;
       }
@@ -106,11 +105,6 @@ document.onkeyup = function (event) {
       } else {
         loseSound.play();
       }
-      // // Add win image
-      // var img = document.createElement("img");
-      // img.src = "assets/images/you-win.png";
-      // var src = document.getElementById("win-message");
-      // src.appendChild(img);
       console.log(wins);
       reset();
     }
@@ -136,11 +130,6 @@ document.onkeyup = function (event) {
       } else {
         winSound.play();
       }
-      // Add lose image
-      // var img = document.createElement("img");
-      // img.src = "assets/images/you-lose.png";
-      // var src = document.getElementById("lose-message");
-      // src.appendChild(img);
       console.log(losses);
       reset();
     }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Hello from Orange Free Sounds,
 
@@ -12,4 +13,20 @@ There are no hidden costs or need to sign-up.
 Licence: The sound effect is permitted for commercial use under license Creative Commons Attribution 4.0 International License
 
 
+=======
+
+Hello from Orange Free Sounds,
+
+
+Stock audio - Free sound effects, loops and music.
+ 
+
+There are no hidden costs or need to sign-up. 
+
+
+
+Licence: The sound effect is permitted for commercial use under license Creative Commons Attribution 4.0 International License
+
+
+>>>>>>> f54dcf33b4693ca5dc350cb2958b736790ea44a2
 http://www.orangefreesounds.com/

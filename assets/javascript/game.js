@@ -11,6 +11,9 @@ var directionsText = document.getElementById("directions-text");
 
 var message = document.getElementById("message");
 
+var winSound = document.getElementById("fanfare");
+var loseSound = document.getElementById("trombone");
+
 var wordBlanks = document.getElementById("word-blanks");
 var wrongGuesses = document.getElementById("wrong-guesses");
 var guessesLeft = document.getElementById("guesses-left");
@@ -102,9 +105,11 @@ document.onkeyup = function (event) {
       document.getElementById("win-counter").innerHTML = wins;
       // alert("You win!");
       document.getElementById("message").innerHTML = "You win!";
-      var winSound = document.getElementById("fanfare");
-      if(wins++) {
+      // var winSound = document.getElementById("fanfare");
+      if(wins) {
         winSound.play();
+      } else {
+        loseSound.play();
       }
       // // Add win image
       // var img = document.createElement("img");
@@ -132,9 +137,11 @@ document.onkeyup = function (event) {
       document.getElementById("loss-counter").innerHTML = losses;
       // alert("Sorry, you lose.");
       document.getElementById("message").innerHTML = "Sorry, you lose.";
-      var loseSound = document.getElementById("trombone");
-      if(wins++) {
+      // var loseSound = document.getElementById("trombone");
+      if(losses) {
         loseSound.play();
+      } else {
+        winSound.play();
       }
       // Add lose image
       // var img = document.createElement("img");

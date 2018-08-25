@@ -103,9 +103,7 @@ document.onkeyup = function (event) {
       console.log("You win!");
       wins++;
       document.getElementById("win-counter").innerHTML = wins;
-      // alert("You win!");
       document.getElementById("message").innerHTML = "You win!";
-      // var winSound = document.getElementById("fanfare");
       if(wins) {
         winSound.play();
       } else {
@@ -135,9 +133,7 @@ document.onkeyup = function (event) {
       console.log("You lose");
       losses++;
       document.getElementById("loss-counter").innerHTML = losses;
-      // alert("Sorry, you lose.");
       document.getElementById("message").innerHTML = "Sorry, you lose.";
-      // var loseSound = document.getElementById("trombone");
       if(losses) {
         loseSound.play();
       } else {
@@ -156,7 +152,6 @@ document.onkeyup = function (event) {
 
 // RESET THE GAME
 function reset() {
-  // message.textContent == "";
   guessesLeft = 9;
   document.getElementById("guesses-left").innerHTML = guessesLeft;
   rightLetter = [];

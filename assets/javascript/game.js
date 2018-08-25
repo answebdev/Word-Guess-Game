@@ -8,12 +8,9 @@ var randomWord;
 
 // Variables that hold references to the places in the HTML where we want to display things.
 var directionsText = document.getElementById("directions-text");
-
 var message = document.getElementById("message");
-
 var winSound = document.getElementById("fanfare");
 var loseSound = document.getElementById("trombone");
-
 var wordBlanks = document.getElementById("word-blanks");
 var wrongGuesses = document.getElementById("wrong-guesses");
 var guessesLeft = document.getElementById("guesses-left");
@@ -104,7 +101,7 @@ document.onkeyup = function (event) {
       wins++;
       document.getElementById("win-counter").innerHTML = wins;
       document.getElementById("message").innerHTML = "You win!";
-      if(wins) {
+      if (wins) {
         winSound.play();
       } else {
         loseSound.play();
@@ -134,7 +131,7 @@ document.onkeyup = function (event) {
       losses++;
       document.getElementById("loss-counter").innerHTML = losses;
       document.getElementById("message").innerHTML = "Sorry, you lose.";
-      if(losses) {
+      if (losses) {
         loseSound.play();
       } else {
         winSound.play();

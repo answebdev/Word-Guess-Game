@@ -8,7 +8,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Word Guessing Game</title>
-    <link rel="icon" href="assets/images/lightbulb.png">
+    <link rel="icon" href="assets/images/question.png">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
 
     <!-- Bootstrap is used to make game look nicer -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -23,10 +24,21 @@
         <!-- Jumbotron holds the title section -->
         <div class="jumbotron">
             <div class="container">
-                <h1>Word Guessing Game</h1>
-                <h2>Guess the word!</h2>
-                <h4>Topic: <strong>Sports and Fitness</strong></h4>
-                <small id="directions-text">Click any letter to begin...</small>
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1>Word Guessing Game</h1>
+                        <h2>Guess the word!</h2>
+                        <h4>Topic: <strong>Sports and Fitness</strong></h4>
+                        <small id="directions-text">Click any letter to begin...</small>
+                    </div>
+                    <div class="col-md-5">
+                        <br>
+                        <br>
+                        <h1 id="message"></h1>
+                        <!-- <div id="win-message"></div>
+                        <div id="lose-message"></div> -->
+                    </div>
+                </div>
             </div>
         </div>
 

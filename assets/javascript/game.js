@@ -19,24 +19,24 @@ var lossCounter = document.getElementById("loss-counter");
 
 // Random word array
 var wordList = [
-  "yoga",
-  "basketball",
-  "referee",
-  "court",
-  "treadmill",
-  "boxing",
-  "wrestling",
-  "weightlifting",
-  "diver",
-  "tennis",
-  "baseball",
-  "volleyball",
-  "golf",
-  "soccer",
-  "uniform",
-  "football",
-  "helmet",
-  "field"
+  "baklava",
+  "biscotti",
+  "brownie",
+  "cake",
+  "cheesecake",
+  "churro",
+  "cookie",
+  "cupcake",
+  "fudge",
+  "gingerbread",
+  "macaroon",
+  "marshmallow",
+  "milkshake",
+  "muffin",
+  "popsicle",
+  "pudding",
+  "strudel",
+  "sundae"
 ];
 
 // CREATE A RANDOM WORD

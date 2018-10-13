@@ -25,6 +25,7 @@ body {
 
 .navbar-brand {
     color: #ffffff!important;
+    font-weight: 600;
     font-size: 40px;
     margin-left: 55px;
 }

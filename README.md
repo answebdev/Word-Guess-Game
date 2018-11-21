@@ -24,3 +24,5 @@ https://answebdev.github.io/Word-Guess-Game/
 ![Screenshot 01](screenshots/wordGuess_screenshot01.png "Word Guess Game")
 
 ![Screenshot 02](screenshots/wordGuess_screenshot02.png "Guess the Dessert")
+
+![Screenshot 03](screenshots/WordGuessGameDemo.gif "Demo")
